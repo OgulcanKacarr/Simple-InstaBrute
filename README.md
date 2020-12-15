@@ -1,8 +1,8 @@
 # InstaBrute
 # Install
 
-git clone https://github.com/OgulcanKacarr/InstaBrute.git
-cd InstaBrute
+git clone https://github.com/OgulcanKacarr/InstaBrute.git<br>
+cd InstaBrute<br>
 python3 InstaBrute -h<br>
 
 
