@@ -4,7 +4,7 @@
 git clone https://github.com/OgulcanKacarr/InstaBrute.git
 cd InstaBrute
 python3 setup.py
-python3 InstaBrute -h
+python3 InstaBrute.py -h
 ```
 Ardından tek yapmanız gereken "wordlist.txt" içine istediğiniz şifre veya şifreleri eklemek ve programı başlatmak.
 
