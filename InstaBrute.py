@@ -35,7 +35,7 @@ def InstallBrowser():
 def fileConts():   
     haveOrnotFile = os.path.exists("geckodriver")
     haveOrnotWordlist = os.path.exists("wordlist.txt")
-    if haveOrnotFile == False and haveOrnotWordlist == False:
+    if haveOrnotFile == False or haveOrnotWordlist == False:
         print(Fore.BLUE)
         print("""
 
