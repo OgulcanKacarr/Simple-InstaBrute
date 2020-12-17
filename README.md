@@ -3,6 +3,7 @@
 ```
 git clone https://github.com/OgulcanKacarr/InstaBrute.git
 cd InstaBrute
+python3 setup.py
 python3 InstaBrute -h
 ```
 <br><br>
