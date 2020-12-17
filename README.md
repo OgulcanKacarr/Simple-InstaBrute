@@ -6,6 +6,8 @@ cd InstaBrute
 python3 setup.py
 python3 InstaBrute -h
 ```
+Ardından tek yapmanız gereken "wordlist.txt" içine istediğiniz şifre veya şifreleri eklemek ve programı başlatmak.
+
 <br><br>
 ![help](https://github.com/OgulcanKacarr/InstaBrute/blob/main/İmages/option.png)<br><br>
 <br>
