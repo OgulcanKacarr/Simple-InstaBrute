@@ -12,6 +12,9 @@ Ardından tek yapmanız gereken "wordlist.txt" içine istediğiniz şifre veya �
 ![help](https://github.com/OgulcanKacarr/InstaBrute/blob/main/İmages/option.png)<br><br>
 <br>
 
+![helpp](https://github.com/OgulcanKacarr/option/blob/main/icons8-turkey-96.png)<br><br>
+
+
 <br><br>
 ![attack](https://github.com/OgulcanKacarr/InstaBrute/blob/main/İmages/attack.png)<br><br>
 <br><br>
