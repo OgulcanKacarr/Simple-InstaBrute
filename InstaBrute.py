@@ -9,7 +9,9 @@ import time
 import wget
 import os
 
-
+def sendmessage(message):
+	subprocess.Popen(['notify-send', message])
+	return
 
 colorama.init()
 global nowPath
@@ -105,6 +107,7 @@ def Attack(userAttack):
     else:
 
         try:
+            sendmessage("Started")
             #service_args=['2>/dev/null','--log-path=/tmp/chromedriver.log']
             browser = webdriver.Firefox()
             browser.set_window_position(50, 50)
